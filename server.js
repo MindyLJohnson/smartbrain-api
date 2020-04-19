@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //End points
-app.get('/', (req, res) => res.send(database.users))
+app.get('/', (req, res) => res.send(db.users))
 app.post('/signin', signin.handleSignin( db, bcrypt))
 app.post('/register', register.handleRegister(db, bcrypt, saltRounds))
 app.get('/profile/:id', profile.handleProfile(db))
